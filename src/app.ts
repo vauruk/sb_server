@@ -17,7 +17,7 @@ class App {
 
   private routes(): void {
     this.express.get("/", (req, res) => {
-      return res.send("Teste de backend de Vanderson Vauruk essa rota esta acessivel!");
+      return res.send("<center><b>Teste de backend de Vanderson Vauruk essa rota esta acessivel!</b> </center>");
     });
     this.express.get("/contacts/:search", ContactController.index);
   }
