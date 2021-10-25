@@ -1,4 +1,4 @@
-[
+ const contactList = [
   {
     "_id": "5dd6a1bf97dce12cc05d3855",
     "picture": "image6.png",
@@ -824,3 +824,4 @@
     "phone_number": "(052) 3115863"
   }
 ]
+export default (contactList)

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 
-import contactList from '../data/contacts.json'
+import contactList from '../data/contacts'
 import { ContactProps } from './ContactType'
 
 class ContactContoller {
