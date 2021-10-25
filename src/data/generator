@@ -1,0 +1,13 @@
+# https://www.json-generator.com/
+
+[
+  '{{repeat(100, 147)}}',
+  {
+    _id: '{{objectId()}}',
+    picture: 'image{{integer(0, 10)}}.png',
+    birthday: '{{date(new Date(1934, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    name: '{{firstName()}} {{surname()}}',
+    address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    phone_number: '(05{{integer(2,4)}}) {{integer(1000000, 9999999)}}'
+  }
+]
