@@ -17,10 +17,11 @@ class App {
 
   private routes(): void {
     this.express.get("/", (req, res) => {
-      return res.send("Hello World!");
+      return res.send("Teste de backend de Vanderson Vauruk essa rota esta acessivel!");
     });
     this.express.get("/contacts/:search", ContactController.index);
   }
 }
 
 export default new App().express;
+
