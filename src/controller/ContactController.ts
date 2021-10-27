@@ -13,13 +13,13 @@ class ContactContoller {
     }
 
     public async index(req: Request, res: Response): Promise<Response> {
-        const search = req.params.search
-        const text = search.split(' ')
-        console.log("text", text)
+        const search = req.params.search.toLowerCase()
         let newList: ContactProps[] = contactList.filter(item =>
-            item.name.includes(search)
+            item.name.toLowerCase().includes(search)
+            /// || item.address.toLocaleLowerCase().includes(search)
+            || item.phone_number.includes(search.replace("[^0-9]", ""))
+            || age(item.birthday).toString().includes(search.replace("[^0-9]", ""))
         )
-
         return res.json(newList);
     }
 
