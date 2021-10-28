@@ -3,19 +3,17 @@ Para rodar localmente:
 
 entrar na pasta do projeto 
 
-´´´´
-Run back-end
+## Run back-end
 
 SB_server
 baixar o projeto 
-cd sb_front yarn && yarn dev
 
-Run front-end 
+`$ cd sb_front yarn && yarn dev`
+
+## Run front-end 
 baixar o projeto do github 
 
-cd sb_front && yarn && yarn start
-
-´´´´
+`$ cd sb_front && yarn && yarn start`
 
 
 ######
