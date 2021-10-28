@@ -14,11 +14,12 @@ class ContactContoller {
 
     public async index(req: Request, res: Response): Promise<Response> {
         const search = req.params.search.toLowerCase()
+        const params = search.split(" ")
         let newList: ContactProps[] = contactList.filter(item =>
-            item.name.toLowerCase().includes(search)
-            /// || item.address.toLocaleLowerCase().includes(search)
-            || item.phone_number.includes(search.replace("[^0-9]", ""))
-            || age(item.birthday).toString().includes(search.replace("[^0-9]", ""))
+            (params.length > 0 && (item.name.toLowerCase().includes(params[0]) || item.phone_number.includes(params[0].replace("[^0-9]", "")) || age(item.birthday).toString().includes(params[0].replace("[^0-9]", ""))))
+            || (params.length > 1 && (item.name.toLowerCase().includes(params[1]) || item.phone_number.includes(params[1].replace("[^0-9]", "")) || age(item.birthday).toString().includes(params[1].replace("[^0-9]", ""))))
+            || (params.length > 2 && (item.name.toLowerCase().includes(params[2]) || item.phone_number.includes(params[2].replace("[^0-9]", "")) || age(item.birthday).toString().includes(params[2].replace("[^0-9]", ""))))
+
         )
         return res.json(newList);
     }
